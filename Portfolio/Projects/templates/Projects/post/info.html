@@ -1,0 +1,16 @@
+{% extends "Projects/base.html" %}
+
+{% block title %}Info{% endblock %}
+
+{% block content %}
+        <h1>Info</h1>
+        <p>
+          Адрес сервера: {{ host }}
+        </p>
+        <p>
+          Данные бразера: {{ user_agent }}
+        </p>
+        <p>
+          Запрошенный путь: {{ path }}
+        </p>
+{% endblock %}

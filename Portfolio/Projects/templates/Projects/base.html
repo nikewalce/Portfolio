@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static 'css/Projects.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div id="sidebar">
+        <a href="{% url 'Projects:post_list' %}"><h2>My Projects</h2></a>
+        <p>This is my Projects.</p>
+    </div>
+</body>
+</html>
