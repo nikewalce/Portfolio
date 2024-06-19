@@ -17,6 +17,11 @@
             This is my Projects.
             I've written {% total_posts %} posts so far.
         </p>
+        <p>
+            <a href="{% url 'Projects:post_feed' %}">
+            Subscribe to my RSS feed
+            </a>
+        </p>
         <!--Здесь вызывается шаблонный тег, передающий число отображаемых постов, и шаблон прорисовывается прямо на месте с заданным контекстом-->
         <h3>Latest posts</h3>
         {% show_latest_posts 3 %}
