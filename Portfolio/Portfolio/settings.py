@@ -15,7 +15,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+SITE_ID = 1
 """Класс BlogConfig – это конфигурация приложения. Теперь Django знает,
 что для этого проекта приложение является активным, и сможет загружать
 модели приложения"""
@@ -27,7 +27,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Projects.apps.ProjectsConfig',
-    'taggit'
+    'taggit',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
 ]
 
 MIDDLEWARE = [

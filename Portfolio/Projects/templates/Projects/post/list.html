@@ -1,6 +1,7 @@
 <!--сообщает Django, что надо наследовать от
 шаблона Projects/base.html-->
 {% extends "Projects/base.html" %}
+{% load Projects_tags %}
 
 {% block title %}My Projects{% endblock %}
 
@@ -31,7 +32,11 @@
         </p>
         <!--truncatewords усекает значение до указанного числа слов, а linebreaks конвертирует результат
 в разрывы строк в формате HTML-->
-        {{ post.body|truncatewords:30|linebreaks }}
+<!--        {{ post.body|truncatewords:30|linebreaks }}-->
+
+        <!--Этот фильтр преобразовывает контент в формате Markdown в формат HTML. Поэтому мы заменили приведенный выше фильтр truncatewords
+фильтром truncatewords_html. Данный фильтр усекает строку после определенного числа слов, избегая незакрытых HTML-тегов-->
+        {{ post.body|markdown|truncatewords_html:30 }}
     {% endfor %}
     <!--Подключаем разбивку по страницам-->
     {% include "pagination.html" with page=posts %}

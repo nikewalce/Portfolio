@@ -1,4 +1,5 @@
 {% extends "Projects/base.html" %}
+{% load Projects_tags %}
 
 {% block title %}{{ post.title }}{% endblock %}
 
@@ -7,7 +8,10 @@
     <p class="date">
         Published {{ post.publish }} by {{ post.author }}
     </p>
-    {{ post.body|linebreaks }}
+    <!--{{ post.body|linebreaks }}-->
+<!--Данный фильтр не только преобразовывает разрывы
+строк в теги <p>, но и конвертирует форматирование Markdown в HTML-->
+    {{ post.body|markdown }}
     <p>
         <a href="{% url 'Projects:post_share' post.id %}">
          Share this post
