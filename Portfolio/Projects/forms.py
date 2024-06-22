@@ -13,3 +13,7 @@ class EmailPostForm(forms.Form):
     to = forms.EmailField()
     comments = forms.CharField(required=False,
                                 widget=forms.Textarea)
+
+#форма для поиска
+class SearchForm(forms.Form):
+    query = forms.CharField()
